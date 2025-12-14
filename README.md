@@ -152,7 +152,8 @@ The application uses a custom design system with:
 
 ### Vercel (Frontend Only)
 
-My App: incubyte-4odsp128e-ashishyadav09s-projects.vercel.app
+The application will be available at:
+- Domain: https://incubyte-git-main-ashishyadav09s-projects.vercel.app/
 
 1. Connect your GitHub repository to Vercel
 2. Configure build settings:
