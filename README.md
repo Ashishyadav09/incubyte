@@ -172,6 +172,19 @@ The included `docker-compose.yml` sets up:
 # One command to run everything
 docker-compose up --build
 ```
+## Project Screenshots
+
+![Screenshot 1](Incubyte_Img/img1.png)
+![Screenshot 2](Incubyte_Img/img2.png)
+![Screenshot 3](Incubyte_Img/img3.png)
+![Screenshot 4](Incubyte_Img/img4.png)
+![Screenshot 5](Incubyte_Img/img5.png)
+![Screenshot 6](Incubyte_Img/img6.png)
+![Screenshot 7](Incubyte_Img/img7.png)
+![Screenshot 8](Incubyte_Img/img8.png)
+![Screenshot 9](Incubyte_Img/img9.png)
+![Screenshot 10](Incubyte_Img/img10.png)
+
 
 ## 🤖 My AI Usage
 
