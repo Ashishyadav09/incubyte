@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # Frontend - React/Vite application
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:3000/api
+    networks:
+      - sweet-shop-network
+
+  # Backend - Node.js/Express API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=postgresql://sweetshop:sweetshop123@postgres:5432/sweetshop
+      - JWT_SECRET=your-super-secret-jwt-key-change-in-production
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - sweet-shop-network
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=sweetshop
+      - POSTGRES_PASSWORD=sweetshop123
+      - POSTGRES_DB=sweetshop
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sweetshop -d sweetshop"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sweet-shop-network
+
+networks:
+  sweet-shop-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
