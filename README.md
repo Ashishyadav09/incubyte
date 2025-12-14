@@ -185,6 +185,9 @@ docker-compose up --build
 ![Screenshot 9](Incubyte_Img/img9.png)
 ![Screenshot 10](Incubyte_Img/img10.png)
 
+## Test Screenshots
+
+![Screenshot 1](test_proof.png)
 
 ## 🤖 My AI Usage
 
