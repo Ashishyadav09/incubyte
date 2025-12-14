@@ -152,6 +152,8 @@ The application uses a custom design system with:
 
 ### Vercel (Frontend Only)
 
+My App: incubyte-4odsp128e-ashishyadav09s-projects.vercel.app
+
 1. Connect your GitHub repository to Vercel
 2. Configure build settings:
    - Build Command: `npm run build`
@@ -192,4 +194,4 @@ MIT License - feel free to use this project as a template!
 
 ---
 
-Made with ❤️ for sweet lovers everywhere
+Made by Ashish Yadav for sweet lovers everywhere
